@@ -14,8 +14,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <javax.servlet.version>3.0.1</javax.servlet.version>
         <spring.version>4.2.4.RELEASE</spring.version>
-        <IP-Domain.version>3.2.0</IP-Domain.version>
-        <maven-war-plugin.version>2.3</maven-war-plugin.version>       
+        <IP-Domain.version>4.0.0</IP-Domain.version>
+        <maven-war-plugin.version>2.3</maven-war-plugin.version>  
+        <glassfish.home>D:\Program Files\glassfish-4.1.1</glassfish.home>     
     </properties>
     
     <dependencies>
@@ -44,6 +45,30 @@
                 <version>${maven-war-plugin.version}</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.glassfish.maven.plugin</groupId>
+                <artifactId>maven-glassfish-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <glassfishDirectory>${glassfish.home}/glassfish</glassfishDirectory>
+                    <user>${glassfish.user}</user>
+                    <passwordFile>${glassfish.passfile}</passwordFile>
+                    <debug>true</debug>
+                    <terse>false</terse>
+                    <echo>true</echo>
+                    <domain>
+                        <name>domain1</name>
+                        <adminPort>4848</adminPort>
+                        <httpPort>8080</httpPort>
+                    </domain>
+                    <components>
+                        <component>
+                            <name>${project.artifactId}</name>
+                            <artifact>target/${project.build.finalName}.war</artifact>
+                        </component>
+                    </components>
                 </configuration>
             </plugin>
         </plugins>
