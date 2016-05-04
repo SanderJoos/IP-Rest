@@ -16,11 +16,11 @@ import services.ServiceFacade;
  * @author Sander_2
  */
 @Configuration
-@ComponentScan("org.ucll.demo.controller")
+@ComponentScan("ip.ip.rest.controller")
 @EnableWebMvc 
 public class ApplicationConfig {
     @Bean
      public ServiceFacade service() {
-         return new ServiceFacade("hashMap");
+         return new ServiceFacade("postgresql");
      }
 }
