@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <javax.servlet.version>3.0.1</javax.servlet.version>
         <spring.version>4.2.4.RELEASE</spring.version>
-        <IP-Domain.version>4.0.0</IP-Domain.version>
+        <IP-Domain.version>4.1.0</IP-Domain.version>
         <maven-war-plugin.version>2.3</maven-war-plugin.version>  
         <glassfish.home>D:\Program Files\glassfish-4.1.1</glassfish.home>     
     </properties>
