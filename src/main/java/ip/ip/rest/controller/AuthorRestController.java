@@ -43,9 +43,9 @@ public class AuthorRestController {
         service.updateAuthor(author);
     }
     
-    @RequestMapping(method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void deleteAuthor(@RequestBody Author author){
-        service.deleteAuthor(author);
+    @RequestMapping(value="/id", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void deleteAuthor(@PathVariable long id){
+        service.deleteAuthor(id);
     }
     
     @RequestMapping(value="/id", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
