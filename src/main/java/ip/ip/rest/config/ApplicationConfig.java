@@ -19,8 +19,9 @@ import services.ServiceFacade;
 @ComponentScan("ip.ip.rest.controller")
 @EnableWebMvc 
 public class ApplicationConfig {
-    @Bean
-     public ServiceFacade service() {
-         return new ServiceFacade("postgresql");
-     }
+    
+    @Bean(destroyMethod="closeConnection")
+    public ServiceFacade service() {
+        return new ServiceFacade("postgresql");
+    }
 }
